@@ -1,49 +1,48 @@
 $(function() {
-	
-	Num1 (5);
-});	
+    Num1 (1);
+});
 
 function isNumber(n) {
-	return typeof n === "number";
+    return typeof n === "number";
 }
 
 function isPos(n) {
-	if (n > 0) {
-		return true;
-	} else if (n < 0) {
-		return false;
-	}
+    return n > 0;
 }
 
 function isEven(n) {
-	if (n%2 ==0) {
-		return true;
-	} else {
-		return false;
-	} 
+    return n % 2 == 0;
 }
 
 function Num1 (n) {
-	
-	if (!(isNumber(n))) {
-	console.log("Параметр должен быть числом");
-	return;
-}	
-	if (Number.isInteger(n) != true) {
-		console.log("Число должно быть целым");
-		return;
-	}
-	
-	if ((n == 0)) {
-		console.log("нулевое число");
-	} else if((isPos(n) == true) && (isEven(n) == true)) {
-		console.log("положительное четное число");
-	} else if ((isPos(n) == true) && (isEven(n) == false)){
-		console.log("положительное нечетное число");
-	} else if ((isPos(n) == false) && (isEven(n) == false)){
-		console.log("отрицательное нечетное число");
-	} else if ((isPos(n) == false) && (isEven(n) == true)){
-		console.log("отрицательное четное число");
-	} 
-		
+    var result = "";
+
+    if (!(isNumber(n))) {
+        console.log("Параметр должен быть числом");
+        return;
+    }
+
+    if (Number.isInteger(n) != true) {
+        console.log("Число должно быть целым");
+        return;
+    }
+
+    if (n == 0) {
+        result = "нулевое";
+    } else {
+        if (isPos(n)) {
+            result = result + "положительное ";
+        } else {
+            result = result + "отрицательное ";
+        }
+
+        if (isEven(n)) {
+            result = result + "четное ";
+        } else {
+            result = result + "нечетное ";
+        }
+    }
+
+    console.log("Число " + n);
+    console.log(result + "число");
 }
