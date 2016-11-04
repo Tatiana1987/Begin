@@ -3,12 +3,9 @@ $(function() {
 	Num1 (5);
 });	
 
-
 function isNumber(n) {
 	return typeof n === "number";
 }
-
-
 
 function isPos(n) {
 	if (n > 0) {
@@ -36,7 +33,6 @@ function Num1 (n) {
 		console.log("Число должно быть целым");
 		return;
 	}
-	
 	
 	if ((n == 0)) {
 		console.log("нулевое число");
