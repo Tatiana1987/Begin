@@ -15,8 +15,7 @@ function triangleSquare(a, b, c) {
         return;
     }
 
-
-    if (isCorrectTriangle(a, b, c)) {
+    if (isIncorrectTriangle(a, b, c)) {
         console.log("Треугольник не существует");
         return;
     }
@@ -30,13 +29,12 @@ function isNumber(a) {
     return typeof a === "number";
 }
 
-function isCorrectTriangle(a, b, c) {
+function isIncorrectTriangle(a, b, c) {
     isCorrectEdge(a, b, c) ||
     isCorrectEdge(a, c, b) ||
-    isCorrectEdge(b, c, a))
+    isCorrectEdge(b, c, a);
 }
 
 function isCorrectEdge(a, b, c) {
     return (a + b) < c;
 }
-
